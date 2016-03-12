@@ -1,0 +1,16 @@
+# Logs and databases #
+#########################
+*.log
+*.sql
+*.sqlite
+
+# Dependencies #
+#########################
+resources/vendor
+node_modules
+
+# Generate system files #
+#########################
+public/css
+public/js
+public/fonts
