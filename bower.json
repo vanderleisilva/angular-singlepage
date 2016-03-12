@@ -1,0 +1,32 @@
+{
+  "name": "angular-singlepage",
+  "homepage": "https://github.com/vanderleisilva/angular-singlepage",
+  "authors": [
+    "Vanderlei Alves da Silva <vanderlei.alves.da.silva@gmail.com>"
+  ],
+  "description": "",
+  "main": "main",
+  "moduleType": [],
+  "keywords": [
+    "angular",
+    "singlepage",
+    "bower",
+    "frontend"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.6",
+    "jquery": "~2.2.1",
+    "angular": "~1.5.0",
+    "angular-resource": "~1.5.0",
+    "font-awesome": "fontawesome#~4.5.0"
+  }
+}
