@@ -1,4 +1,4 @@
-app.service('customerService', function($http, localStorageService) {
+app.service('customerService', function(localStorageService) {
 
     var storageKey = "customers";
 
