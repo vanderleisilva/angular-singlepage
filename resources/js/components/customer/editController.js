@@ -1,8 +1,9 @@
 app.controller('customer/editController', function($rootScope, $location, customerService, $routeParams)
 {
-    var isUpdate = !!$routeParams.id;
+
+    $rootScope.isUpdate = !!$routeParams.id;
     $rootScope.activetab = $location.path();
-    $rootScope.title = isUpdate ? 'Edit customer' : 'New customer';
+    $rootScope.title = $rootScope.isUpdate ? 'Edit customer' : 'New customer';
     $rootScope.status = 2;
 
     $rootScope.save = function(){
@@ -10,7 +11,7 @@ app.controller('customer/editController', function($rootScope, $location, custom
             return;
         }
 
-        if (isUpdate) {
+        if ($rootScope.isUpdate) {
             $rootScope.status = customerService.update($rootScope.customer) ? 1 : 0;
             $location.path("/customer");
             return;
