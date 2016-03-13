@@ -1,16 +1,34 @@
 app.controller('customer/editController', function($rootScope, $location, customerService, $routeParams)
 {
+    var isUpdate = !!$routeParams.id;
     $rootScope.activetab = $location.path();
-    $rootScope.title = $routeParams.id ? 'Edit customer' : 'New customer';
+    $rootScope.title = isUpdate ? 'Edit customer' : 'New customer';
+    $rootScope.status = 2;
+
+    $rootScope.save = function(){
+        if (!$rootScope.validate()) {
+            return;
+        }
+
+        if (isUpdate) {
+            $rootScope.status = customerService.update($rootScope.customer) ? 1 : 0;
+            $location.path("/customer");
+            return;
+        }
+
+        $rootScope.status = customerService.insert($rootScope.customer) ? 1 : 0;
+        $location.path("/customer");
+    }
+
+    $rootScope.validate = function(){
+        var customer = $rootScope.customer;
+        return (customer.id && customer.name && customer.category);
+    }
 
     if (!$routeParams.id) {
+        $rootScope.customer = {};
         return;
     }
 
-    customerService.get(function(data){
-        if (!data) {
-            $location.path("/customer");
-        }
-        $rootScope.customer = data;
-    }, $routeParams);
+    $rootScope.customer = customerService.get($routeParams);
 });

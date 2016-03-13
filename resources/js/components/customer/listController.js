@@ -5,10 +5,9 @@ app.controller('customer/listController', function($rootScope, $location, custom
     $rootScope.remove = function(customer){
         if(confirm("Are you sure to delete customer number: " + customer.id)){
             customerService.remove(customer);
+            $rootScope.customers = customerService.get();
         }
     }
 
-    customerService.get(function(data){
-        $rootScope.customers = data;
-    });
+    $rootScope.customers = customerService.get();
 });

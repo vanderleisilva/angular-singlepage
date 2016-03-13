@@ -23,10 +23,10 @@
         <div class="alert alert-warning" ng-show="!validate()" role="alert">
              ID, name and category are required information.
         </div>
-        <div class="alert alert-success" ng-show="status" role="alert">
+        <div class="alert alert-success" ng-show="status == 1" role="alert">
              Customer saved successfully.
         </div>
-        <div class="alert alert-error" ng-show="!status" role="alert">
+        <div class="alert alert-danger" ng-show="status == 0" role="alert">
              Problem on saving customer, please contact the administrator.
         </div>
     </div>

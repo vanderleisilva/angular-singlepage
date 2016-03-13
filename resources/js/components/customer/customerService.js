@@ -1,28 +1,62 @@
-app.service('customerService', function($http) {
+app.service('customerService', function($http, localStorageService) {
 
-    var server = "data/customers.json";
+    var storageKey = "customers";
 
-    this.get = function (callback, customer) {
-        $http.get(server).then(function (response) {
-            if (!customer) {
-                callback(response.data);
-                return;
-            }
+    this.get = function (customer) {
+        var customers = localStorageService.get(storageKey);
 
-            var selectedCustomer = response.data.filter(function(item){
-                return item.id == customer.id;
-            })
+        if (!customer) {
+            return customers;
+        }
 
-            callback(selectedCustomer ? selectedCustomer[0] : false);
+        var selectedCustomer = customers.filter(function(item){
+            return item.id == customer.id;
         });
+
+        return selectedCustomer ? selectedCustomer[0] : false;
+
     }
 
-    this.new = function (customer) {
+    this.insert = function(customer){
+        var customers = localStorageService.get(storageKey);
 
+        if (!Array.isArray(customers)) {
+            customers = [];
+        }
+
+        customers.push(customer);
+        localStorageService.set(storageKey,customers);
+        return true;
+    }
+
+    this.update = function(customer) {
+        var customers = localStorageService.get(storageKey);
+
+        if (!Array.isArray(customers)) {
+            return false;
+        }
+
+        customers.splice(customers.findIndex(function(item){
+            return item.id == customer.id;
+        }), 1, customer);
+
+        localStorageService.set(storageKey,customers);
+        return true;
     }
 
     this.remove = function (customer) {
+        var customers = localStorageService.get(storageKey);
 
+        if (!Array.isArray(customers)) {
+            return false;
+        }
+
+        customers.splice(customers.findIndex(function(item){
+            return item.id == customer.id;
+        }), 1);
+
+        localStorageService.set(storageKey,customers);
+        return true;
     }
 
 });
