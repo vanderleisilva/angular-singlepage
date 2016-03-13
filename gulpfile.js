@@ -22,10 +22,15 @@ elixir(function(mix) {
 
     mix.scripts([
       '../vendor/angular/angular.min.js',
-      '../vendor/angular-resource/angular-resource.min.js',
+      '../vendor/angular-route/angular-route.min.js',
+      '../vendor/angular-local-storage/dist/angular-local-storage.min.js',
       '../vendor/jquery/dist/jquery.min.js',
       '../vendor/bootstrap/dist/js/bootstrap.min.js',
       'main.js',
-      'routes.js'
+      'routes.js',
+      'components/home',
+      'components/customer',
+      'components/statistic',
+      'components/about'
     ], 'public/js/main.js');
 });
