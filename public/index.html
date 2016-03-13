@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head lang="en">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Angular Single Page App</title>
+    <link rel="stylesheet" type="text/css" href="css/app.css"/>
+</head>
+<body>
+
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#/">Angular Single Page</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li ng-class="{active: activetab == '/'}"><a href="#/"><i class="fa fa-tachometer"></i> Home</a></li>
+          <li ng-class="{active: activetab == '/customer'}"><a href="#/customer"><i class="fa fa-users"></i> Customers</a></li>
+          <li ng-class="{active: activetab == '/editcustomer'}"><a href="#/customer/new"><i class="fa fa-user-plus"></i> New customer</a></li>
+          <li ng-class="{active: activetab == '/statistics'}"><a href="#/statistics"><i class="fa fa-area-chart"></i> Statistics</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li ng-class="{active: activetab == '/about'}"><a href="#/about"><i class="fa fa-info-circle"></i> About</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- <div ng-controller="myCtrl">
+
+  First Name: <input type="text" ng-model="firstName"><br>
+  Last Name: <input type="text" ng-model="lastName"><br>
+  <br>
+  Full Name: {{firstName + " " + lastName}}
+
+  </div> -->
+
+
+  <div class="container" ng-view></div>
+  <script type="text/javascript" src="js/main.js"></script>
+
+</body>
+</html>

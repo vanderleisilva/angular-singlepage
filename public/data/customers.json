@@ -1,0 +1,17 @@
+[
+  {
+    "id" : "0001",
+    "name" : "Vanderlei Silva",
+    "category" : "Gold"
+  },
+  {
+    "id" : "0002",
+    "name" : "John",
+    "category" : "Silver"
+  },
+  {
+    "id" : "0003",
+    "name" : "John 2",
+    "category" : "Silver"
+  }
+]

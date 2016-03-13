@@ -1,0 +1,37 @@
+<ol class="breadcrumb">
+    <li class="active">Customers</li>
+</ol>
+<div class="page-header">
+    <h2>{{title}}</h2>
+</div>
+<form class="panel panel-default">
+    <div class="panel-body">
+        <div class="row">
+            <div class="form-group col-md-2">
+              <label for="name">ID</label>
+              <input type="text" class="form-control" id="name" ng-model="customer.id" required />
+            </div>
+            <div class="form-group col-md-5">
+              <label for="name">Name</label>
+              <input type="text" class="form-control" id="name" ng-model="customer.name" required />
+            </div>
+            <div class="form-group col-md-5">
+              <label for="category">Category</label>
+              <input type="text" class="form-control" id="category" ng-model="customer.category" required />
+            </div>
+        </div>
+        <div class="alert alert-warning" ng-show="!validate()" role="alert">
+             ID, name and category are required information.
+        </div>
+        <div class="alert alert-success" ng-show="status" role="alert">
+             Customer saved successfully.
+        </div>
+        <div class="alert alert-error" ng-show="!status" role="alert">
+             Problem on saving customer, please contact the administrator.
+        </div>
+    </div>
+    <div class="panel-footer">
+        <button class="btn btn-primary" ng-click="save()" type="button"><i class="fa fa-save"></i> Save</button>
+        <button class="btn btn-default" type="button"><i class="fa fa-circle-thin"></i> Cancel</button>
+    </div>
+</form>
