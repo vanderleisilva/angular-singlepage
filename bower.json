@@ -1,39 +1,40 @@
 {
-  "name": "angular-singlepage",
-  "homepage": "https://github.com/vanderleisilva/angular-singlepage",
-  "authors": [
-    "Vanderlei Alves da Silva <vanderlei.alves.da.silva@gmail.com>"
-  ],
-  "description": "",
-  "main": "main",
-  "moduleType": [],
-  "keywords": [
-    "angular",
-    "singlepage",
-    "bower",
-    "frontend"
-  ],
-  "license": "MIT",
-  "private": true,
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ],
-  "dependencies": {
-    "bootstrap": "~3.3.6",
-    "jquery": "~2.2.1",
-    "angular": "~1.5.0",
-    "font-awesome": "fontawesome#~4.5.0",
-    "angular-route": "~1.5.0",
-    "angular-local-storage": "~0.2.5",
-    "angular-mocks": "~1.5.0",
-    "angular-datatables": "^0.5.3",
-    "angular-resource": "^1.5.3"
-  },
-  "devDependencies": {
-    "jasmine-core": "jasmine#~2.4.1"
-  }
+    "name": "angular-singlepage",
+    "homepage": "https://github.com/vanderleisilva/angular-singlepage",
+    "authors": [
+        "Vanderlei Alves da Silva <vanderlei.alves.da.silva@gmail.com>"
+    ],
+    "description": "",
+    "main": "main",
+    "moduleType": [],
+    "keywords": [
+        "angular",
+        "singlepage",
+        "bower",
+        "frontend"
+    ],
+    "license": "MIT",
+    "private": true,
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests"
+    ],
+    "dependencies": {
+        "bootstrap": "~3.3.6",
+        "jquery": "~2.2.1",
+        "angular": "~1.5.0",
+        "font-awesome": "fontawesome#~4.5.0",
+        "angular-route": "~1.5.0",
+        "angular-local-storage": "~0.2.5",
+        "angular-mocks": "~1.5.0",
+        "angular-datatables": "^0.5.3",
+        "angular-resource": "^1.5.3",
+        "angular-ui-mask": "^1.8.1"
+    },
+    "devDependencies": {
+        "jasmine-core": "jasmine#~2.4.1"
+    }
 }
